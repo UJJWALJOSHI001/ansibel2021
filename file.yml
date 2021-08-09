@@ -1,0 +1,18 @@
+---
+ - hosts: webserver
+   become: yes
+   tasks:
+           - name: creating file
+             file:
+                     path: /abc.txt
+                     state: touch
+
+           - name: write a line 
+             copy:
+                     content: "hi this is ansible"
+                     dest: /abc.txt
+
+           - name: add a line
+             lineinfile:
+                     path: /abc.txt
+                     line: "ex294"

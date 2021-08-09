@@ -1,0 +1,6 @@
+---
+ - hosts: all
+   become: true
+   tasks:
+           - name: check connection with manage nodes
+             ping:
